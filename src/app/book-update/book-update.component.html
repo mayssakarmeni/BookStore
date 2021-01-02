@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-body">
+      <form>
+        
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">id: </label>
+          <input type="number" disabled="true" value="{{book.idBook}}"  class="form-control"  #idBook />
+        </div>
+        
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Title: </label>
+          <input type="text" class="form-control" value="{{book.title}}" #title/>
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Title is required.
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <label class="col-md-4">Author name:</label>
+          <input type="text" class="form-control"  value="{{book.author}}" #author />
+        </div>
+        <div class="alert alert-danger" hidden>
+          <div>
+            Author name is required.
+          </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Release date:</label>
+            <input type="date" class="form-control"  value="{{book.releaseDate}}" #releaseDate />
+          </div>
+          <div class="alert alert-danger" hidden>
+            <div>
+              Release date is required.
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+            <label class="col-md-4">Price:</label>
+            <input type="number" class="form-control"  value="{{book.price}}" #price />
+          </div>
+          <div class="alert alert-danger" hidden >
+            <div>
+              Price is required.
+            </div>
+        </div>
+
+        <div class="form-group" style="margin: 20px;">
+          <a class="nav-link" routerLink="/Books" routerLinkActive="active">
+          <button (click) = "updateBook(idBook.value,title.value,author.value,price.value,releaseDate.value)" type="submit" class="btn btn-primary" >
+            Edit book
+          </button>
+        </a>
+        </div>
+      </form>
+    </div>
+</div>
+
+

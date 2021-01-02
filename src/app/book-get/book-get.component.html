@@ -1,0 +1,39 @@
+<meta http-equiv="refresh" content="2000">
+  <table class="table table-hover">
+    <thead>
+      
+    <tr>
+      <td> id Book </td>
+    <td>Book Name</td>
+    <td>Author</td>
+    <td>Book Price</td>
+    <td>Release Date</td>
+    <td > Edit </td>
+    <td > Delete </td>
+    <td > Quantity </td>
+    <td > Buy </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let Book of books">
+    <td>{{Book.idBook}}</td>
+    <td> {{Book.title}}</td>
+    <td>{{Book.author}}</td>
+    <td>{{Book.price}}</td>
+    <td> {{Book.releaseDate}}</td>
+    <td><a  [routerLink] ="['/Book/update',Book.idBook]" routerLinkActive="active"  class="btn btn-primary">Edit</a></td>
+    <td>
+     
+     <a  routerLink ="/Books" routerLinkActive="active"  (click) = "deletebook(Book.idBook)"    class="btn btn-danger">Delete</a></td>
+     <td>
+      <input type="number" #quantity value="1" min="1" max="5"></td>
+    <td>  <a (click)="addToCart(Book.idBook,quantity.value)" class="btn btn-success">+Cart</a>
+  </td>
+
+    
+      
+    </tr>
+ 
+    </tbody>
+   </table>
+   <router-outlet></router-outlet>

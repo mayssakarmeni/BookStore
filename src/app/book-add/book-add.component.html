@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+    <div class="form-group">
+    <label class="col-md-4">Book Name</label>
+    <input type="text" class="form-control"formControlName="title"#title />
+</div>
+<div *ngIf="angForm.controls['title'].invalid && (angForm.controls['title'].dirty || angForm.controls['title'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['title'].errors.required">
+Book Name is required.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Author Name </label>
+<input type="text" class="form-control" rows = 7 cols = "5"formControlName="author"#author/>
+</div>
+<div *ngIf="angForm.controls['author'].invalid && (angForm.controls['author'].dirty || angForm.controls['author'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['author'].errors.required">Author Name Description is required.
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4">Book Price</label>
+<input type="text" class="form-control"formControlName="price"#price/>
+</div>
+<div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+<div *ngIf="angForm.controls['price'].errors.required">
+Book Price is required.
+</div>
+</div>
+<div class="form-group">
+    <label class="col-md-4">ReleaseDate</label>
+    <input type="date" class="form-control"formControlName="releaseDate"#releaseDate/>
+    </div>
+    <div *ngIf="angForm.controls['releaseDate'].invalid && (angForm.controls['releaseDate'].dirty || angForm.controls['releaseDate'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['releaseDate'].errors.required">
+        ReleaseDate is required.
+    </div>
+    </div>
+<div class="form-group">
+<a class="nav-link" routerLink ="/Books" routerLinkActive="active" >
+<button  (click) = "addBook()"  type="submit" class="nav-link" routerLinkActive="active" class="btn btn-primary" >
+Create Book
+ </button></a>
+ </div>
+ </form>
+ </div>
+</div>
